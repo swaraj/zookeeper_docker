@@ -1,10 +1,10 @@
 # DOCKER-VERSION 1.0.1
-# VERSION        0.5
+# VERSION        1.0
 
 FROM debian:jessie
 MAINTAINER Swaraj Yadav <yadav.swaraj@gmail.com>
 
-RUN apt-get update && apt-get install -y openjdk-7-jre-headless wget vim
+RUN apt-get update && apt-get install -y openjdk-7-jre-headless wget vim net-tools
 RUN wget -q -O - http://apache.mirrors.pair.com/zookeeper/zookeeper-3.4.7/zookeeper-3.4.7.tar.gz | tar -xzf - -C /opt \
     && mv /opt/zookeeper-3.4.7 /opt/zookeeper \
     && mkdir -p /opt/zookeeper/data
