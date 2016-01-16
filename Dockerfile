@@ -5,7 +5,7 @@ FROM debian:jessie
 MAINTAINER Swaraj Yadav <yadav.swaraj@gmail.com>
 
 RUN apt-get update && apt-get install -y openjdk-7-jre-headless wget vim net-tools
-RUN wget -q -O - http://apache.mirrors.pair.com/zookeeper/zookeeper-3.4.7/zookeeper-3.4.7.tar.gz | tar -xzf - -C /opt \
+RUN wget -q -O - http://www.eu.apache.org/dist/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar.gz | tar -xzf - -C /opt \
     && mv /opt/zookeeper-3.4.7 /opt/zookeeper \
     && mkdir -p /opt/zookeeper/data
 
