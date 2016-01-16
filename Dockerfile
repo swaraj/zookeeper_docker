@@ -6,7 +6,7 @@ MAINTAINER Swaraj Yadav <yadav.swaraj@gmail.com>
 
 RUN apt-get update && apt-get install -y openjdk-7-jre-headless wget vim net-tools
 RUN wget -q -O - http://www.eu.apache.org/dist/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar.gz | tar -xzf - -C /opt \
-    && mv /opt/zookeeper-3.4.7 /opt/zookeeper \
+    && mv /opt/zookeeper-3.4.6 /opt/zookeeper \
     && mkdir -p /opt/zookeeper/data
 
 RUN cp /opt/zookeeper/conf/zoo_sample.cfg /opt/zookeeper/conf/zoo.cfg
