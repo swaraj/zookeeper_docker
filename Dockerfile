@@ -9,13 +9,8 @@ RUN wget -q -O - http://www.eu.apache.org/dist/zookeeper/zookeeper-3.4.6/zookeep
     && mv /opt/zookeeper-3.4.6 /opt/zookeeper \
     && mkdir -p /opt/zookeeper/data
 
-RUN cp /opt/zookeeper/conf/zoo_sample.cfg /opt/zookeeper/conf/zoo.cfg
-
-RUN echo "server.1=localhost:2888:3887" >> /opt/zookeeper/conf/zoo.cfg
-RUN echo "server.2=localhost:2888:3888" >> /opt/zookeeper/conf/zoo.cfg
-RUN echo "server.3=localhost:2888:3889" >> /opt/zookeeper/conf/zoo.cfg
-
-RUN touch /opt/zookeeper/data/myid
+COPY zoo.cfg /opt/zookeeper/conf/
+COPY myid /opt/zookeeper/data/
 
 ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
 
